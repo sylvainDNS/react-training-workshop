@@ -5,6 +5,12 @@ If this is not your case, please [RTFM](https://fr.reactjs.org/docs/getting-star
 
 This training aims to improve your knowledge on React, in particular on modern syntax and the dependency stack that we use at [Pepperbay](https://pepperbay.fr/).
 
+## Let's start
+
+You will find the steps of the workshop in the `./docs` directory, or by clicking here :
+
+- First step : [Convert class components to function components](./docs/FirstStep.md)
+
 ## About
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), and largely inspired by [scotch.io Code Challenge #14](https://scotch.io/bar-talk/code-challenge-14-test-your-knowledge-of-react-hooks).
