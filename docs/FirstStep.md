@@ -12,6 +12,8 @@ At [Pepperbay](Pepperbay) we use [function components](https://reactjs.org/docs/
 
 To succeed in this step, you will have to convert all class components contained in `./src/Component` & `./src/App.js` with some constraints.
 
+When you think your work is correct, run `yarn test`. The integration tests will check that the components are still working as intended.
+
 #### Constraints
 
 These constraints must be used every day in each of your developments.
