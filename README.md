@@ -1,8 +1,13 @@
-# Getting Started with Create React App
+# React Training Workshop
+
+This workshop is not intended for newbies with JavaScript or React, you need to know some basics.  
+If this is not your case, please [RTFM](https://fr.reactjs.org/docs/getting-started.html) before starting.
+
+This training aims to improve your knowledge on React, in particular on modern syntax and the dependency stack that we use at [Pepperbay](https://pepperbay.fr/).
+
+## About
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), and largely inspired by [scotch.io Code Challenge #14](https://scotch.io/bar-talk/code-challenge-14-test-your-knowledge-of-react-hooks).
-
-Its aim is to train and test knowledge on React library.
 
 ## Available Scripts
 
