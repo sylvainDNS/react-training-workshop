@@ -5,6 +5,12 @@ If this is not your case, please [RTFM](https://fr.reactjs.org/docs/getting-star
 
 This training aims to improve your knowledge on React, in particular on modern syntax and the dependency stack that we use at [Pepperbay](https://pepperbay.fr/).
 
+## Prerequisites
+
+- Node.js & yarn locally installed
+- `node --version` >= [LTS](https://nodejs.org/en/about/releases/)
+- `yarn --version` >= 2
+
 ## Let's start
 
 You will find the steps of the workshop in the `./docs` directory, or by clicking here :
