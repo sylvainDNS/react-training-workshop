@@ -1,25 +1,18 @@
-import { Component } from 'react'
+import { useState } from 'react'
 
-class Two extends Component {
-  state = {
-    activeUser: 'Louise',
+const Two = () => {
+  const [activeUser, setActiveUser] = useState('Louise')
+  const changeUser = () => {
+    setActiveUser('Michel')
   }
 
-  changeUser = () => {
-    this.setState({
-      activeUser: 'Michel',
-    })
-  }
-
-  render() {
-    return (
-      <div>
-        <h2>Challenge 2</h2>
-        <p>Active user is: {this.state.activeUser}</p>
-        <button onClick={this.changeUser}>Change user</button>
-      </div>
-    )
-  }
+  return (
+    <div>
+      <h2>Challenge 2</h2>
+      <p>Active user is: {activeUser}</p>
+      <button onClick={changeUser}>Change user</button>
+    </div>
+  )
 }
 
 export default Two

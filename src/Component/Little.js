@@ -1,17 +1,13 @@
-import { Component } from 'react'
+import { useEffect } from 'react'
 
-class Little extends Component {
-  componentWillUnmount() {
-    alert('Goodbye!!')
-  }
+const Little = () => {
+  useEffect(() => () => alert('Goodbye!!'), [])
 
-  render() {
-    return (
-      <div>
-        <h5>Hi! I'm Little and it's nice to meet you!!</h5>
-      </div>
-    )
-  }
+  return (
+    <div>
+      <h5>Hi! I'm Little and it's nice to meet you!!</h5>
+    </div>
+  )
 }
 
 export default Little

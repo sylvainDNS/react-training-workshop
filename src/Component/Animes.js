@@ -1,9 +1,11 @@
-import { Component } from 'react'
+import { useEffect, useState } from 'react'
 
-class Animes extends Component {
-  state = { animes: [], isLoading: true, error: null }
+const Animes = () => {
+  const [animes, setAnimes] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
+  const [error, setError] = useState(null)
 
-  componentDidMount() {
+  useEffect(() => {
     fetch('https://ghibliapi.herokuapp.com/films/')
       .then(response => {
         if (!response.ok) {
@@ -13,31 +15,28 @@ class Animes extends Component {
       })
       .then(response => response.json())
       .then(
-        animes => this.setState({ ...this.state, animes, isLoading: false }),
-        error =>
-          this.setState({
-            ...this.state,
-            isLoading: false,
-            error: error,
-          })
+        animes => {
+          setAnimes(animes)
+          setIsLoading(false)
+        },
+        error => {
+          setError(error)
+          setIsLoading(false)
+        }
       )
-  }
+  }, [])
 
-  render() {
-    const { isLoading, animes, error } = this.state
+  if (error) return <pre>{error.message}</pre>
 
-    if (error) return <pre>{error.message}</pre>
+  if (isLoading) return <p>Loading...</p>
 
-    if (isLoading) return <p>Loading...</p>
-
-    return (
-      <ul>
-        {animes.map((anime, index) => (
-          <li key={`animes-list-${index}-${anime.id}`}>{anime.title}</li>
-        ))}
-      </ul>
-    )
-  }
+  return (
+    <ul>
+      {animes.map((anime, index) => (
+        <li key={`animes-list-${index}-${anime.id}`}>{anime.title}</li>
+      ))}
+    </ul>
+  )
 }
 
 export default Animes
