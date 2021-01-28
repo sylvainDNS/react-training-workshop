@@ -8,14 +8,14 @@ test(`
 `, () => {
   render(<One />)
 
-  expect(screen.getByText(/Count is: 0/))
+  expect(screen.getByText(/Count is: 0/)).toBeInTheDocument()
   expect(screen.getByRole('button')).toBeInTheDocument()
 
   const increaseButton = screen.getByRole('button')
 
   userEvent.click(increaseButton)
-  expect(screen.getByText(/Count is: 1/))
+  expect(screen.getByText(/Count is: 1/)).toBeInTheDocument()
 
   userEvent.click(increaseButton)
-  expect(screen.getByText(/Count is: 2/))
+  expect(screen.getByText(/Count is: 2/)).toBeInTheDocument()
 })
