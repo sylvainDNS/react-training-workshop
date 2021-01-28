@@ -9,7 +9,7 @@ const Three = () => {
   const swapCar = () => {
     setBrand('Tesla')
     setType('Model S')
-    setYear('2020')
+    setYear(2020)
     setIsUsed(false)
   }
 
