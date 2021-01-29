@@ -42,7 +42,7 @@ test(`
 `, async () => {
   server.use(
     rest.get('https://ghibliapi.herokuapp.com/films/', (_, res, ctx) => {
-      return res(ctx.status(500))
+      return res(ctx.status(500), ctx.json({ message: 'Failed' }))
     })
   )
   render(<Animes />)

@@ -5,28 +5,27 @@ class Animes extends Component {
 
   componentDidMount() {
     fetch('https://ghibliapi.herokuapp.com/films/')
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Failed with HTTP code ' + response.status)
+      .then(response => Promise.all([response, response.json()]))
+      .then(([{ status }, body]) => {
+        if (400 <= status && typeof body === 'object' && body !== null) {
+          return Promise.reject(body)
         }
-        return response
+
+        this.setState({ ...this.state, animes: body, isLoading: false })
       })
-      .then(response => response.json())
-      .then(
-        animes => this.setState({ ...this.state, animes, isLoading: false }),
-        error =>
-          this.setState({
-            ...this.state,
-            isLoading: false,
-            error: error,
-          })
+      .catch(error =>
+        this.setState({
+          ...this.state,
+          isLoading: false,
+          error: error.message,
+        })
       )
   }
 
   render() {
     const { isLoading, animes, error } = this.state
 
-    if (error) return <pre>{error.message}</pre>
+    if (error) return <pre>{error}</pre>
 
     if (isLoading) return <p>Loading...</p>
 
