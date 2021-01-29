@@ -1,6 +1,7 @@
-import { render, screen, waitFor } from '@testing-library/react'
+import { screen, waitFor } from '@testing-library/react'
 import { rest } from 'msw'
 import { setupServer } from 'msw/node'
+import { render } from '../testUtils'
 import Animes from './Animes'
 
 const animes = [

@@ -1,4 +1,5 @@
-import { render, screen } from '@testing-library/react'
+import { screen } from '@testing-library/react'
+import { render } from '../testUtils'
 import Four from './Four'
 
 jest.useFakeTimers()
