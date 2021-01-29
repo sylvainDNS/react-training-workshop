@@ -16,10 +16,11 @@ This training aims to improve your knowledge on React, in particular on modern s
 You will find the steps of the workshop in the `./docs` directory, or by clicking here :
 
 - First step : [Convert class components to function components](./docs/FirstStep.md)
+- Second step : [Migrate local state in `Redux`](./docs/SecondStep.md)
 
 ## About
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), and largely inspired by [scotch.io Code Challenge #14](https://scotch.io/bar-talk/code-challenge-14-test-your-knowledge-of-react-hooks).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), and inspired by [scotch.io Code Challenge #14](https://scotch.io/bar-talk/code-challenge-14-test-your-knowledge-of-react-hooks).
 
 ## Available Scripts
 
