@@ -7,26 +7,22 @@ const Animes = () => {
 
   useEffect(() => {
     fetch('https://ghibliapi.herokuapp.com/films/')
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Failed with HTTP code ' + response.status)
+      .then(response => Promise.all([response, response.json()]))
+      .then(([{ status }, body]) => {
+        if (400 <= status && typeof body === 'object' && body !== null) {
+          return Promise.reject(body)
         }
-        return response
+
+        setAnimes(body)
+        setIsLoading(false)
       })
-      .then(response => response.json())
-      .then(
-        animes => {
-          setAnimes(animes)
-          setIsLoading(false)
-        },
-        error => {
-          setError(error)
-          setIsLoading(false)
-        }
-      )
+      .catch(error => {
+        setError(error.message)
+        setIsLoading(false)
+      })
   }, [])
 
-  if (error) return <pre>{error.message}</pre>
+  if (error) return <pre>{error}</pre>
 
   if (isLoading) return <p>Loading...</p>
 
