@@ -9,7 +9,7 @@ This training aims to improve your knowledge on React, in particular on modern s
 
 - Node.js & yarn locally installed
 - `node --version` >= [LTS](https://nodejs.org/en/about/releases/)
-- `yarn --version` >= 2
+- `yarn --version` >= 1.22
 
 ## Let's start
 
