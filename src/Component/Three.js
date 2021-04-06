@@ -1,17 +1,14 @@
-import { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import * as ThreeState from '../State/Three'
 
 const Three = () => {
-  const [brand, setBrand] = useState('Simca')
-  const [type, setType] = useState('1000 Rallye 2')
-  const [year, setYear] = useState(1978)
-  const [isUsed, setIsUsed] = useState(true)
+  const dispatch = useDispatch()
+  const brand = useSelector(ThreeState.select.brand)
+  const type = useSelector(ThreeState.select.type)
+  const year = useSelector(ThreeState.select.year)
+  const isUsed = useSelector(ThreeState.select.isUsed)
 
-  const swapCar = () => {
-    setBrand('Tesla')
-    setType('Model S')
-    setYear(2020)
-    setIsUsed(false)
-  }
+  const handleClick = () => dispatch(ThreeState.swapCar())
 
   return (
     <div>
@@ -41,7 +38,7 @@ const Three = () => {
           </tr>
         </tbody>
       </table>
-      <button onClick={swapCar}>Swap Car!</button>
+      <button onClick={handleClick}>Swap Car!</button>
     </div>
   )
 }

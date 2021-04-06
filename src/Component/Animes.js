@@ -1,9 +1,12 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import * as SixState from '../State/Six'
 
 const Animes = () => {
-  const [animes, setAnimes] = useState([])
-  const [isLoading, setIsLoading] = useState(true)
-  const [error, setError] = useState(null)
+  const dispatch = useDispatch()
+  const animes = useSelector(SixState.select.animes)
+  const isLoading = useSelector(SixState.select.isLoading)
+  const error = useSelector(SixState.select.error)
 
   useEffect(() => {
     fetch('https://ghibliapi.herokuapp.com/films/')
@@ -13,14 +16,12 @@ const Animes = () => {
           return Promise.reject(body)
         }
 
-        setAnimes(body)
-        setIsLoading(false)
+        dispatch(SixState.animesReceived(body))
       })
       .catch(error => {
-        setError(error.message)
-        setIsLoading(false)
+        dispatch(SixState.failed(error.message))
       })
-  }, [])
+  }, [dispatch])
 
   if (error) return <pre>{error}</pre>
 

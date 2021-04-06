@@ -1,16 +1,17 @@
-import { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import * as TwoState from '../State/Two'
 
 const Two = () => {
-  const [activeUser, setActiveUser] = useState('Louise')
-  const changeUser = () => {
-    setActiveUser('Michel')
-  }
+  const dispatch = useDispatch()
+  const activeUser = useSelector(TwoState.select.activeUser)
+
+  const handleClick = () => dispatch(TwoState.changeUser())
 
   return (
     <div>
       <h2>Challenge 2</h2>
       <p>Active user is: {activeUser}</p>
-      <button onClick={changeUser}>Change user</button>
+      <button onClick={handleClick}>Change user</button>
     </div>
   )
 }
