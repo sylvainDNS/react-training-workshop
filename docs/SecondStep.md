@@ -1,4 +1,4 @@
-# Second state
+# Second step
 
 ## Migrate local state in `Redux`
 
@@ -35,10 +35,13 @@ Many developers believe that `Redux` can be replaced by `Context` API. Yes, this
 But `Redux` comes with many other things:
 
 - A clear & safe lifecycle
+- An optimized rendering process
 - The ability to trace when, where, why and how our state has changed
 - The possibility of centralizing the logic of the application
 - A lot of middleware to properly manage side-effects
 - Wonderful dev tools
+
+If you want to know more about this debate, read this wonderful article: [React Context for Dependency Injection Not State Management](https://blog.testdouble.com/posts/2021-03-19-react-context-for-dependency-injection-not-state)
 
 ### Todo
 
