@@ -15,8 +15,9 @@ This training aims to improve your knowledge on React, in particular on modern s
 
 You will find the steps of the workshop in the `./docs` directory, or by clicking here :
 
-- First step : [Convert class components to function components](./docs/FirstStep.md)
-- Second step : [Migrate local state in `Redux`](./docs/SecondStep.md)
+- First step: [Convert class components to function components](./docs/FirstStep.md)
+- Second step: [Migrate local state in `Redux`](./docs/SecondStep.md)
+- Third step: [Manage side-effects with `Redux-Saga`](./docs/ThirdStep.md)
 
 ## About
 
