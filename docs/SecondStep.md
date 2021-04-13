@@ -1,4 +1,4 @@
-# Second state
+# Second step
 
 ## Migrate local state in `Redux`
 
